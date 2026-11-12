@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme {
+  --color-marron-logo: #5c3a21;
+  --color-celeste-logo: #e2f6fa;
+  --color-celeste-oscuro: #bce3eb;
+}

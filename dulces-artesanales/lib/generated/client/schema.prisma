@@ -1,0 +1,74 @@
+generator client {
+  provider        = "prisma-client-js"
+  output          = "../lib/generated/client"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Dulce {
+  id           String   @id @default(uuid())
+  nombre       String
+  descripcion  String?
+  precio       Float
+  categoria    String?
+  imagen       String?
+  artesanal    Boolean  @default(true)
+  ingredientes String[]
+  createdAt    DateTime @default(now())
+}
+
+model Pedido {
+  id        String   @id @default(uuid())
+  nombre    String
+  apellidos String
+  email     String
+  telefono  String
+  direccion String
+  ciudad    String?
+  productos String
+  total     Float
+  estado    String   @default("pendiente")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model CierreDiario {
+  id          String   @id @default(uuid())
+  fecha       DateTime @default(now())
+  totalVentas Float
+  numPedidos  Int
+  pedidosJson String
+  createdAt   DateTime @default(now())
+}
+
+model CierreSemanal {
+  id           String   @id @default(uuid())
+  numeroSemana Int // Del 1 al 4
+  mesAnio      String // Formato "05-2026"
+  totalVentas  Float
+  numPedidos   Int
+  cierresJson  String
+  cerradoMan   Boolean  @default(false)
+  createdAt    DateTime @default(now())
+}
+
+model CierreMensual {
+  id          String   @id @default(uuid())
+  mesAnio     String
+  totalVentas Float
+  numCierres  Int
+  cierresJson String
+  createdAt   DateTime @default(now())
+}
+
+model BannerOferta {
+  id          String   @id @default(uuid())
+  imagen      String
+  descripcion String
+  vigencia    DateTime
+  metodosPago String[]
+  createdAt   DateTime @default(now())
+}
