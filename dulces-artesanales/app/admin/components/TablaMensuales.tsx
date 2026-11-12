@@ -31,12 +31,12 @@ export const TablaMensuales: React.FC<TablaMensualesProps> = ({
 }) => {
   const [mesSeleccionado, setMesSeleccionado] = useState<CierreMensual | null>(null);
 
-  // Encontramos el valor máximo histórico para calcular el gráfico de barras proporcional de Tailwind
+  
   const ventaMaximaHistorica = mensuales.length > 0 
     ? Math.max(...mensuales.map(m => m.totalVentas)) 
     : 1;
 
-  // Descarga un reporte consolidado en CSV/Excel de la carpeta del mes
+  
   const descargarCarpetaMesExcel = (cierreMes: CierreMensual) => {
     try {
       const cierresDiarios: CierreDiarioRespaldo[] = JSON.parse(cierreMes.cierresJson);

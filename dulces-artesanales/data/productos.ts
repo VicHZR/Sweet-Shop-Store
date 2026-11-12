@@ -4,9 +4,9 @@ export interface Dulce {
   descripcion: string;
   precio: number;
   categoria: 'chocolates' | 'galletas' | 'pasteles' | 'tradicionales';
-  imagen: string; // Ruta relativa desde la carpeta public
+  imagen: string; 
   artesanal: boolean;
-  ingredientes: string[]; // Añadido para la ventana de detalles
+  ingredientes: string[]; 
 }
 
 export const LISTA_DULCES: Dulce[] = [
@@ -16,7 +16,7 @@ export const LISTA_DULCES: Dulce[] = [
     descripcion: 'Hechas a mano con cacao al 70%, decoradas con lluvia de frutos secos.',
     precio: 15.00,
     categoria: 'chocolates',
-    imagen: '/Cupcakes.jpg', // Reemplaza con tu archivo real en public/
+    imagen: '/Cupcakes.jpg', 
     artesanal: true,
     ingredientes: ['Cacao orgánico 70%', 'Crema de leche premium', 'Pizca de sal marina', 'Almendras picadas']
   },
@@ -26,7 +26,7 @@ export const LISTA_DULCES: Dulce[] = [
     descripcion: 'Horneadas artesanalmente, endulzadas con miel orgánica de abeja.',
     precio: 12.50,
     categoria: 'galletas',
-    imagen: '/macaron_12.jpg', // Reemplaza con tu archivo real en public/
+    imagen: '/macaron_12.jpg', 
     artesanal: true,
     ingredientes: ['Avena integral en hojuelas', 'Miel pura de abeja', 'Aceite de coco', 'Esencia de vainilla natural']
   },
@@ -36,7 +36,7 @@ export const LISTA_DULCES: Dulce[] = [
     descripcion: 'Dulce clásico preparado en olla de bronce siguiendo la receta familiar.',
     precio: 18.00,
     categoria: 'tradicionales',
-    imagen: '/Tiramisu.jpg', // Reemplaza con tu archivo real en public/
+    imagen: '/Tiramisu.jpg', 
     artesanal: true,
     ingredientes: ['Yemas de huevo frescas', 'Leche evaporada', 'Azúcar blanca', 'Agua de azahar']
   },
@@ -56,7 +56,7 @@ export const LISTA_DULCES: Dulce[] = [
     descripcion: 'Dulce clásico preparado en olla de bronce siguiendo la receta familiar.',
     precio: 18.00,
     categoria: 'pasteles',
-    imagen: '/Cheesecake_fresa.jpg', // Reemplaza con tu archivo real en public/
+    imagen: '/Cheesecake_fresa.jpg', 
     artesanal: true,
     ingredientes: ['Yemas de huevo frescas', 'Leche evaporada', 'Azúcar blanca', 'Agua de azahar']
   },

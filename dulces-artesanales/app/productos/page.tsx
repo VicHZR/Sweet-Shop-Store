@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Loader2 } from 'lucide-react';
 
-// CORRECCIÓN 2307: Enlazamos con el alias global '@/' para que Next.js los lea sin importar la carpeta física
+
 import { BarraFiltros } from '@/components/BarraFiltros';
 import { GrillaProductos } from '@/components/GrillaProductos';
 

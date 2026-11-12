@@ -32,7 +32,7 @@ export const BarraBusqueda: React.FC<BarraBusquedaProps> = ({
     }
   };
 
-  // Determinar si la pestaña activa requiere o no barra de búsqueda de texto plano
+  
   const habilitarFiltroTexto = pestanaActiva === 'productos' || pestanaActiva === 'pedidos';
 
   return (

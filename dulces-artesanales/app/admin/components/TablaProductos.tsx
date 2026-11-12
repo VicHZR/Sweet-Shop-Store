@@ -3,7 +3,7 @@
 import React from 'react';
 import { Edit, Trash2 } from 'lucide-react';
 import Image from 'next/image';
-import { Dulce } from '../page'; // Importamos la interfaz raíz
+import { Dulce } from '../page'; 
 
 interface TablaProductosProps {
   dulcesFiltrados: Dulce[];

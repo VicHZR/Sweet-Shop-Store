@@ -12,7 +12,7 @@ export const BarraFiltros: React.FC<BarraFiltrosProps> = ({
   categoriaSeleccionada,
   setCategoriaSeleccionada
 }) => {
-  // Lista unificada de las categorías comerciales configuradas en el backend
+  
   const categoriasPeruanas = [
     "Todos", 
     "Tortas y Pasteles", 

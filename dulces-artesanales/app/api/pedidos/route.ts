@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import nodemailer from 'nodemailer';
 
-// 🏛️ RECTIFICACIÓN: Creamos el transporte SMTP seguro conectándonos directo a los servidores de Google
+
 const transportadorGmail = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -215,7 +215,7 @@ export async function POST(request: Request) {
       }
     });
 
-    // 2. Despachar el correo de la boleta directo al email del cliente usando SMTP de Gmail
+    
     try {
       const objetoOrdenTipado: OrdenBoleta = {
         id: nuevaOrdenGuardada.id,
@@ -229,7 +229,7 @@ export async function POST(request: Request) {
 
       const cuerpoHtmlBoleta = generarHtmlBoletaElectronica(objetoOrdenTipado, listaProductosArray);
       
-      // 🌟 RECTIFICACIÓN: Envío dinámico ilimitado a cualquier cuenta de correo (Gmail, Hotmail, etc.)
+      
       await transportadorGmail.sendMail({
         from: `"Dulce Diferencia" <${process.env.GMAIL_USER}>`,
         to: nuevaOrdenGuardada.email, // 👈 Envía al email real de tu cliente

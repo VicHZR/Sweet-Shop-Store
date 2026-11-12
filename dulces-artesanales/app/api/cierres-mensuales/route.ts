@@ -8,7 +8,7 @@ interface EstructuraCierreDiario {
   fecha: string;
 }
 
-// GET: Recuperar las carpetas mensuales mediante SQL Puro
+
 export async function GET() {
   try {
     const mensuales: unknown[] = await prisma.$queryRaw`
@@ -21,10 +21,10 @@ export async function GET() {
   }
 }
 
-// POST: Consolidar el mes e inyectar los datos directamente en PostgreSQL
+
 export async function POST() {
   try {
-    // 1. Descargar los cierres diarios acumulados de forma segura mediante SQL Puro
+
     const cierresDiariosRaw: any[] = await prisma.$queryRaw`
       SELECT * FROM "CierreDiario"
     `;

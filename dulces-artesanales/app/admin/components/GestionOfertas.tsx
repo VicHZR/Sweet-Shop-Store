@@ -46,12 +46,12 @@ export const GestionOfertas: React.FC<GestionOfertasProps> = ({
 
   const listaMetodos = ["Yape", "Plin", "Efectivo", "Visa / Mastercard"];
 
-  // Función controladora para activar la edición limpiando efectos en cascada
+  
   const activarEdicionOferta = (oferta: Oferta) => {
     setOfertaAEditar(oferta);
     setDescripcion(oferta.descripcion);
     setImagen(oferta.imagen);
-    // Extraemos de forma segura el formato YYYY-MM-DD para el control input
+    
     const fechaFormateada = oferta.vigencia ? oferta.vigencia.split('T')[0] : "";
     setVigencia(fechaFormateada);
     setMetodosPago(oferta.metodosPago || []);

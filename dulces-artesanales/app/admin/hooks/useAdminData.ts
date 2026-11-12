@@ -243,7 +243,7 @@ export const useAdminData = () => {
     }));
   };
 
-  // 🏛️ RECTIFICACIÓN: Saneamiento del punto roto que detenía el hilo de ejecución
+  
   const manejarSubidaArchivoEdicion = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const archivosSeleccionados = e.target.files;
     if (!archivosSeleccionados || archivosSeleccionados.length === 0) return;

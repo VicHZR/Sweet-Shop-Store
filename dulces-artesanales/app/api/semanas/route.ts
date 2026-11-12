@@ -12,7 +12,7 @@ export async function POST(request: Request) {
       );
     }
 
-    // Ejecutar transaccionalidad por bloques de SQL Nativo parametrizado
+    
     await prisma.$transaction(async (tx) => {
       for (const id of ids) {
         await tx.$executeRaw`

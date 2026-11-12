@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Eye } from 'lucide-react';
-import { Pedido } from '../page'; // Importamos la interfaz del archivo raíz
+import { Pedido } from '../page'; 
 
 interface TablaPedidosProps {
   pedidos: Pedido[];
@@ -15,7 +15,7 @@ export const TablaPedidos: React.FC<TablaPedidosProps> = ({
   busqueda,
   abrirDetallePedido
 }) => {
-  // Filtramos la lista de pedidos localmente basándonos en el nombre o apellidos del cliente
+  
   const pedidosFiltrados = pedidos.filter(p => 
     `${p.nombre} ${p.apellidos}`.toLowerCase().includes(busqueda.toLowerCase())
   );

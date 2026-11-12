@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 
-// GET: Descargar todos los banners activos directo desde PostgreSQL
+
 export async function GET() {
   try {
     const ofertas: unknown[] = await prisma.$queryRaw`
@@ -14,7 +14,7 @@ export async function GET() {
   }
 }
 
-// POST: Registrar un nuevo banner publicitario controlando fechas vacías
+
 export async function POST(request: NextRequest) {
   try {
     const cuerpo = await request.json();
@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
     const ahora = new Date();
     const arraySql = metodosPago && metodosPago.length > 0 ? metodosPago : [];
 
-    // Inserción directa mediante SQL Nativo
+
     await prisma.$executeRaw`
       INSERT INTO "BannerOferta" ("id", "imagen", "descripcion", "vigencia", "metodosPago", "createdAt")
       VALUES (${uuidNuevo}, ${imagen}, ${descripcion}, ${fechaVigencia}, ${arraySql}, ${ahora})
@@ -50,7 +50,7 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// PUT: Actualizar una oferta existente mediante SQL Crudo
+
 export async function PUT(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
@@ -78,7 +78,7 @@ export async function PUT(request: NextRequest) {
   }
 }
 
-// DELETE: Dar de baja y remover una oferta del carrusel por ID
+
 export async function DELETE(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
@@ -88,7 +88,7 @@ export async function DELETE(request: NextRequest) {
       return NextResponse.json({ error: 'Se requiere el ID de la oferta' }, { status: 400 });
     }
 
-    // Borrado físico directo mediante SQL Nativo
+    
     await prisma.$executeRaw`
       DELETE FROM "BannerOferta" WHERE "id" = ${id}
     `;

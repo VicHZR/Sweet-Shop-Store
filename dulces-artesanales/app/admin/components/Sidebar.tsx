@@ -55,7 +55,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
           Pedidos Realizados
         </button>
 
-        {/* 🌟 NUEVA SECCIÓN: Ventas Diarias */}
+        {/* 🌟  SECCIÓN: Ventas Diarias */}
         <button
           type="button"
           onClick={() => { setPestanaActiva('diarias'); setBusqueda(''); }}
@@ -67,7 +67,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
           Ventas Diarias
         </button>
 
-        {/* 🌟 NUEVA SECCIÓN: Ventas Semanales */}
+        {/* 🌟  SECCIÓN: Ventas Semanales */}
         <button
           type="button"
           onClick={() => { setPestanaActiva('semanales'); setBusqueda(''); }}

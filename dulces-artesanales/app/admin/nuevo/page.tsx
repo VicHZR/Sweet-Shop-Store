@@ -26,7 +26,7 @@ export default function NuevoDulce() {
   const [precio, setPrecio] = useState('');
   const [categoria, setCategoria] = useState('chocolates');
   const [descripcion, setDescripcion] = useState('');
-  const [imagen, setImagen] = useState(''); // Aquí se guardará la URL final (/dulce_xxx.jpg)
+  const [imagen, setImagen] = useState('');
   const [artesanal, setArtesanal] = useState(true);
   const [ingredientes, setIngredientes] = useState('');
 

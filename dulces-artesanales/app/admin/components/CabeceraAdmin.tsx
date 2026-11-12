@@ -15,7 +15,7 @@ export const CabeceraAdmin: React.FC<CabeceraAdminProps> = ({
   setIsModalCierreOpen,
   abrirModal
 }) => {
-  // Traducir el identificador de la pestaña a un título legible para el usuario
+  
   const obtenerTituloPestana = () => {
     switch (pestanaActiva) {
       case 'productos': return 'Catálogo de Productos';

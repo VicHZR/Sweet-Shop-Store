@@ -59,7 +59,7 @@ export default function TiendaPublica() {
         fetch('/api/ofertas')
       ]);
 
-      // Tolerancia a envoltorios de objetos o respuestas crudas de la API
+      
       const jsonDulces = resDulces.ok ? await resDulces.json() : [];
       const jsonOfertas = resOfertas.ok ? await resOfertas.json() : [];
 
@@ -147,9 +147,7 @@ export default function TiendaPublica() {
           setCategoriaSeleccionada={setCategoriaSeleccionada} 
         />
 
-        {/* 🏛️ SOLUCIÓN DEFINITIVA: Le inyectamos el arreglo completo 'dulces' sin pre-filtrar en la página.
-            De esta manera, si GrillaProductos realiza un filtrado interno combinado con su barra de búsqueda,
-            tendrá acceso a toda la colección completa de la base de datos evitando el conflicto de estados vacíos. */}
+        {/* Grilla de Productos */}
         {cargando ? (
           <div className="text-center text-xs font-semibold text-gray-400 py-12">Cargando delicias artesanales...</div>
         ) : (

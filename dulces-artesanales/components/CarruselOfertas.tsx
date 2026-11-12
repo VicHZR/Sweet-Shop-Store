@@ -19,7 +19,7 @@ interface CarruselOfertasProps {
 export const CarruselOfertas: React.FC<CarruselOfertasProps> = ({ ofertas = [] }) => {
   const [indiceActivo, setIndiceActivo] = useState(0);
 
-  // 🏛️ RECTIFICACIÓN: El efecto se ejecuta siempre primero, la validación se hace adentro
+  
   useEffect(() => {
     if (!ofertas || ofertas.length <= 1) return;
     const intervaloAuto = setInterval(() => {
@@ -28,7 +28,7 @@ export const CarruselOfertas: React.FC<CarruselOfertasProps> = ({ ofertas = [] }
     return () => clearInterval(intervaloAuto);
   }, [ofertas]);
 
-  // Si no hay datos válidos que mostrar, el retorno tardío evita errores de desestructuración
+  
   if (!ofertas || ofertas.length === 0) {
     return null;
   }

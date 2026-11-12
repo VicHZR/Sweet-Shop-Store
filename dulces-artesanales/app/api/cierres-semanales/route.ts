@@ -23,7 +23,7 @@ export async function GET() {
   try {
     const dbDinamica = prisma as unknown as ServidorPrismaDinamico;
     
-    // 🏛️ RECTIFICACIÓN: Búsqueda de fallbacks dinámicos tipada estrictamente sin usar "any"
+    
     const modeloCierreSemanal = 
       dbDinamica.cierreSemanal || 
       dbDinamica.cierresemanal;
@@ -55,7 +55,7 @@ export async function POST(request: Request) {
 
     const dbDinamica = prisma as unknown as ServidorPrismaDinamico;
     
-    // 🏛️ RECTIFICACIÓN: tipado seguro sin any
+    
     const modeloCierreDiario = dbDinamica.cierreDiario as ModelosCrudDinamicos;
 
     if (!modeloCierreDiario) {
@@ -74,7 +74,7 @@ export async function POST(request: Request) {
     const sumaTotalPedidosSemana = cierresDiariosLibres.reduce((sum, c) => sum + c.numPedidos, 0);
     const cadenaJsonRespaldos = JSON.stringify(cierresDiariosLibres);
 
-    // Formatear mes y año en base a la fecha actual para cumplir con tu esquema (Ej: "05-2026")
+    
     const fechaActual = new Date();
     const mesFormateado = String(fechaActual.getMonth() + 1).padStart(2, '0');
     const anioFormateado = fechaActual.getFullYear();
@@ -82,7 +82,7 @@ export async function POST(request: Request) {
     const resultadoCierreSemanal = await prisma.$transaction(async (tx) => {
       const txDinamica = tx as unknown as ServidorPrismaDinamico;
       
-      // 🏛️ RECTIFICACIÓN: Forzado de llaves dinámicas usando interfaces seguras sin any
+    
       const txModeloCierreSemanal = (txDinamica.cierreSemanal || txDinamica.cierresemanal) as ModelosCrudDinamicos;
       const txModeloCierreDiario = txDinamica.cierreDiario as { deleteMany: () => Promise<unknown> };
 
@@ -97,7 +97,7 @@ export async function POST(request: Request) {
         }
       });
 
-      // Vaciar la tabla de cierres diarios temporales tras consolidarse el lote semanal
+      
       await txModeloCierreDiario.deleteMany();
 
       return nuevoRegistroSemanal;

@@ -110,7 +110,7 @@ export default function PedidosAdmin() {
   const obtenerProductosDesglose = (productosJson: string) => {
     try {
       const productos = JSON.parse(productosJson);
-      // Aseguramos que sea un array
+      
       const lista = Array.isArray(productos) ? productos : [];
       return (
         <div className="space-y-1">
